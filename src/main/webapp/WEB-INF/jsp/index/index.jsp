@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=ISO-8859-1" language="java" pageEncoding="UTF-8" import="java.sql.*" errorPage="" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -5,6 +6,6 @@
 <title>VRaptor Blank Project</title>
 </head>
 <body>
-	BISTERÇO [19/06/2019It works!! ${variable} ${linkTo[IndexController].index}
+	BISTERÇO [19/06/2019] It works!! ${variable} ${linkTo[IndexController].index}
 </body>
 </html>
