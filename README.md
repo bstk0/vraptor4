@@ -12,4 +12,6 @@ mvn tomcat7:run
 
 Cuidado para *jamais* executar `mvn tomcat:run` pois ele usará um tomcat6 (incompatível).
 
-[21/06/19] ajuste Context root de "your.groupid" para "vraptor4"
+[21/06/19] 
+- Ajuste Context root de "your.groupid" para "vraptor4"
+- Cultura (restdb.io) list e add 
