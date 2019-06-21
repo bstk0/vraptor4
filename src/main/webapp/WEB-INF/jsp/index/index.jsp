@@ -7,7 +7,8 @@
 </head>
 <body>
 	BISTERÇO [19/06/2019] It works!!<br>
-	[21/06/19] Codenvy
-	${variable} ${linkTo[IndexController].index}
+	[21/06/19] Codenvy<br>
+	Variavel: ${variable} <br>
+	Index   : ${linkTo[IndexController].index}
 </body>
 </html>
