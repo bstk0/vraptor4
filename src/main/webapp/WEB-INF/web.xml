@@ -16,4 +16,9 @@
     <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
   </listener>
   
+  <context-param>
+    <param-name>br.com.caelum.vraptor.encoding</param-name>
+    <param-value>UTF-8</param-value>
+  </context-param>
+
 </web-app>

@@ -3,9 +3,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>VRaptor Blank Project</title>
+<title>VRaptor Blank Project - Vraptor4</title>
 </head>
 <body>
-	BISTERÇO [19/06/2019] It works!! ${variable} ${linkTo[IndexController].index}
+	BISTERÇO [19/06/2019] It works!!<br>
+	[21/06/19] Codenvy
+	${variable} ${linkTo[IndexController].index}
 </body>
 </html>
