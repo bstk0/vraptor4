@@ -30,10 +30,10 @@ public class CulturaController {
 		}
 
 		//return JSON
-	    //public void list() {
-	    //	 List<Cultura> culturas = dao.getList();
-	    //   result.use(json()).from(culturas).serialize();    
-	    //}
+	    public void culturas() {
+	       List<Cultura> culturas = dao.getList();
+	       result.use(json()).from(culturas).serialize();    
+	    }
 
 	    //@Path("/")
 	    public Cultura view(Long id) {
