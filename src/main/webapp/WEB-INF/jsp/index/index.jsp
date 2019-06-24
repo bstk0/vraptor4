@@ -11,8 +11,8 @@
 	Variavel: ${variable} <br>
 	Index   : ${linkTo[IndexController].index}
 	<br><br>
-	<a href="cultura/view">Cultura View</a>||
-	<a href="cultura/list">Cultura List</a>||
+	<a href="cultura/view">Cultura View</a>&nbsp;||&nbsp;
+	<a href="cultura/list">Cultura List</a>&nbsp;||&nbsp;
 	<a href="cultura/form">Cultura Add</a>
 </body>
 </html>

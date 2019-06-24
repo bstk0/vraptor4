@@ -18,7 +18,7 @@
     Preço:
     <input type="text" name="cultura.novacoluna"/><br/>
     -->
-    <input type="submit" value="Salvar" />
+    <input type="submit" value="Salvar" />&nbsp;<a href="${linkTo[IndexController].index}">Voltar</a>
 </form>
 </body>
 </html>
