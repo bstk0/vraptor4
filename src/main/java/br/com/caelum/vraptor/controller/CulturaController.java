@@ -36,9 +36,10 @@ public class CulturaController {
 	    }
 
 	    //@Path("/")
-	    public Cultura view(Long id) {
+	    public void view(Long id) {
 	    	//String text = dao.getList();
-	    	return new Cultura("02","Cultura 02");
+	    	//return new Cultura("02","Cultura 02");
+	    	result.include("cultura", new Cultura("02","Cultura 02"));
 	    }
 	
 	    public void add(Cultura cultura) {
