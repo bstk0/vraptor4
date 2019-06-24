@@ -3,12 +3,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>VRaptor Blank Project - Vraptor4</title>
+<title>Vraptor4 - Cultura</title>
 </head>
 <body>
 	BISTERÇO [19/06/2019] It works!!<br>
 	[21/06/19] Codenvy [2]<br>
 	Variavel: ${variable} <br>
 	Index   : ${linkTo[IndexController].index}
+	<br><br>
+	<a href="cultura/view">Cultura View</a>||
+	<a href="cultura/list">Cultura List</a>||
+	<a href="cultura/form">Cultura Add</a>
 </body>
 </html>
