@@ -9,20 +9,13 @@
 <title>Cultura</title>
 </head>
 <body>
-	<h1>Cultura</h1>
+	<h1>Cultura - Edit</h1>
 	<h2>from restdb.io - <a href="${linkTo[IndexController].index}">Voltar</a></h2>
 	<table>
 		<tr>
-			<td>Código</td>
-			<td>Descrição</td>
+			<td>Código : ${cultura.codigo}</td>
+			<td>Descrição: ${cultura.descricao}</td>
 		</tr>
-
-		<c:forEach items="${culturaList}" var="cultura" varStatus="theCount">
-			<tr>
-				<td>${cultura.CulturaCodigo}</td>
-				<td>${cultura.CulturaDescricao}</td>
-			</tr>
-		</c:forEach>
 
 	</table>
 </body>

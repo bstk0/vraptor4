@@ -47,6 +47,25 @@ public class CulturaDAO {
 		String resultWoobly = restDb.post(COLLECTION, snuttgly.toJSONString());
 
 	}
+	
+	public Cultura getItem(String id) {
+		JSONParser parser = new JSONParser();
+		//JSONObject jsonQuery = new JSONObject();
+		String culturaItem = restDb.get(COLLECTION + "/" + id);
+		System.out.println("getItem:" + culturaItem);
+		try {
+			Object obj = parser.parse(culturaItem);
+			JSONObject results = (JSONObject) (obj);
+			//return (Cultura) results.get(0);
+			return new Cultura(results.get("_id").toString(),
+					Integer.parseInt(results.get("CulturaCodigo").toString()),
+					results.get("CulturaDescricao").toString());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return new Cultura(10,"CULTURA 10");
+	}
 
 	/**
 	 * Create 2 JSON Objects and add them to the collection
