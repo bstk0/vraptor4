@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap 4 Simple Table</title>
+<title>Cultura - list</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,7 +23,7 @@
 	<h1>Cultura - from restdb.io</h1>
 <a href="${linkTo[IndexController].index}">Voltar</a>
 <div class="bs-example">
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Código</th>
