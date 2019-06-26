@@ -53,4 +53,10 @@ public class CulturaController {
 	    	Cultura cultura = dao.getItem(id);
 	    	result.include("cultura",cultura);
         }
+	    
+	    public void update(Cultura cultura) {
+	    	System.out.println(cultura.toString());
+	    	dao.update(cultura);
+	    	result.redirectTo(CulturaController.class).list();
+	    }
 }

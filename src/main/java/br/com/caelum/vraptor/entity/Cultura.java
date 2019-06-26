@@ -5,6 +5,11 @@ public class Cultura {
 	private Integer codigo;
     private String descricao;
     
+	@Override
+	public String toString() {
+		return "Cultura [_id=" + _id + ", codigo=" + codigo + ", descricao=" + descricao + "]";
+	}
+
 	public Cultura(String _id, Integer codigo, String descricao) {
 		super();
 		this._id = _id;

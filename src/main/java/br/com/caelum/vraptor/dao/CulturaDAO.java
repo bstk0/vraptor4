@@ -39,14 +39,20 @@ public class CulturaDAO {
 	}
 	
 	public void add(Cultura cultura) {
-		JSONObject snuttgly = new JSONObject();
-		snuttgly.put("CulturaCodigo", cultura.getCodigo());
-		snuttgly.put("CulturaDescricao", cultura.getDescricao() );
-		snuttgly.put("NovaColuna", "They are the best");
-
+		JSONObject snuttgly = culturaToJSON(cultura);
 		String resultWoobly = restDb.post(COLLECTION, snuttgly.toJSONString());
 
 	}
+
+	
+	public void update(Cultura cultura) {
+		JSONObject snuttgly = culturaToJSON(cultura);
+		System.out.println("snuttgly.toJSONString():" + snuttgly.toJSONString());
+		String id = cultura.get_id();
+		String reString = restDb.put(COLLECTION + "/" + id, snuttgly.toJSONString());
+		System.out.println(reString);
+	}
+	
 	
 	public Cultura getItem(String id) {
 		JSONParser parser = new JSONParser();
@@ -67,6 +73,15 @@ public class CulturaDAO {
 		return new Cultura(10,"CULTURA 10");
 	}
 
+	private JSONObject culturaToJSON(Cultura cultura) {
+		JSONObject snuttgly = new JSONObject();
+		snuttgly.put("CulturaCodigo", cultura.getCodigo());
+		snuttgly.put("CulturaDescricao", cultura.getDescricao() );
+		//snuttgly.put("NovaColuna", "They are the best");
+		return snuttgly;
+	}
+
+	
 	/**
 	 * Create 2 JSON Objects and add them to the collection
 	 * 
