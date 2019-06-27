@@ -26,7 +26,6 @@
     <table class="table table-hover">
         <thead class="thead-light">
             <tr>
-                <th>Id</th>
                 <th>Código</th>
                 <th>Descrição</th>
             </tr>
@@ -34,8 +33,7 @@
         <tbody>
 		<c:forEach items="${culturaList}" var="cultura" varStatus="theCount">
 			<tr>
-			    <td><a href="${linkTo[CulturaController].edit}?id=${cultura._id}">${cultura._id}</a></td>
-				<td>${cultura.CulturaCodigo}</td>
+			    <td><a href="${linkTo[CulturaController].edit}?id=${cultura._id}">${cultura.CulturaCodigo}</a></td>
 				<td>${cultura.CulturaDescricao}</td>
 			</tr>
 		</c:forEach>
