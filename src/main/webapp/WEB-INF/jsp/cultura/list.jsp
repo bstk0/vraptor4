@@ -24,7 +24,7 @@
 <a href="${linkTo[IndexController].index}">Voltar</a>
 <div class="bs-example">
     <table class="table table-hover">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
                 <th>Código</th>
