@@ -72,6 +72,21 @@ public class CulturaDAO {
 		}
 		return new Cultura(10,"CULTURA 10");
 	}
+	
+	public String getCount() {
+		JSONParser parser = new JSONParser();
+		String count = restDb.getCount(COLLECTION);
+		System.out.println("getCount:" + count);
+		try {
+			Object obj = parser.parse(count);
+			JSONObject results = (JSONObject) (obj);
+			return results.get("COUNT ").toString();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "0";
+	}
 
 	private JSONObject culturaToJSON(Cultura cultura) {
 		JSONObject snuttgly = new JSONObject();

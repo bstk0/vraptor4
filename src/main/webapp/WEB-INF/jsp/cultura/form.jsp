@@ -26,41 +26,36 @@
 </style>
 </head>
 <body>
-	<form action="<c:url value='/cultura/add'/>">
-		<div class="container" style="margin-top: 30px;">
-			<h5>Adicionando Cultura</h5>
-			<div class="row">
-				<div class="col-sm-2">Codigo:</div>
-				<div class="col-sm-4">
-					<input type="text" name="cultura.codigo" />
+	<div class="container" style="margin-top: 30px;">
+		<h5>Adicionando Cultura</h5>
+
+		<form action="<c:url value='/cultura/add'/>">
+
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label" for="cultura.codigo">Código</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="cultura.codigo"
+						name="cultura.codigo">
 				</div>
 			</div>
-			<!--
-    <div class="input-group input-group-sm mb-3" max-width="500px">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-sm">Codigo</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="cultura.codigo">
-</div>
-    -->
-			<div class="row">
-				<div class="col-sm-2">Descrição:</div>
-				<div class="col-sm-4">
-					<input type="text" name="cultura.descricao" />
+
+			<div class="form-group row">
+				<label class="col-sm-3 col-form-label" for="cultura.codigo">Descrição</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" id="cultura.descricao"
+						name="cultura.descricao">
 				</div>
 			</div>
-			<!-- 
-    Preço:
-    <input type="text" name="cultura.novacoluna"/><br/>
-    -->
+
 			<div class="row">
-				<div class="col-sm-6">
-				<button type="submit" class="btn btn-success save-btn">Save</button>
-				<a href="${linkTo[IndexController].index}" class="btn btn-light"
-					role="button">Voltar</a>
-				</div>	
+				<div class="col-sm-9 offset-sm-3">
+					<button type="submit" class="btn btn-success save-btn">Save</button>
+					<a href="${linkTo[IndexController].index}" class="btn btn-light"
+						role="button">Voltar</a>
+				</div>
 			</div>
-		</div>
-	</form>
+
+		</form>
+	</div>
 </body>
 </html>

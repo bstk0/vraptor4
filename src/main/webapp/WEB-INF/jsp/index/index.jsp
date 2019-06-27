@@ -28,25 +28,28 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-		<nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
-			<a href="#" class="navbar-brand">VRaptor 4</a>
-			<button class="navbar-toggler" data-toggle="collapse"
-				data-target="#navbarCollapse">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav ml-auto">
-					<li class="navbar-item"><a href="cultura/view" class="nav-link">Cultura View</a>
-					</li>
-					<li class="navbar-item"><a href="cultura/list" class="nav-link">Cultura List</a>
-					</li>
-					<li class="navbar-item"><a href="cultura/form" class="nav-link">Cultura Add</a></li>
-					<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-<!-- 
+	<nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+		<a href="#" class="navbar-brand">VRaptor 4</a>
+		<button class="navbar-toggler" data-toggle="collapse"
+			data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+				<li class="navbar-item"><a href="cultura/view" class="nav-link">Cultura
+						View</a></li>
+				<li class="navbar-item">
+				   <a href="cultura/list" class="nav-link d-flex justify-content-between align-items-center">Cultura
+						List <span class="badge badge-primary badge-pill">${listCount}</span>
+				</a></li>
+				<li class="navbar-item"><a href="cultura/form" class="nav-link">Cultura
+						Add</a></li>
+				<li class="navbar-item"><a href="test/tests.html"
+					class="nav-link">Tests</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- 
 <div class="container" style="margin-top: 30px;">
 	BISTERÇO [19/06/2019] It works!!<br>
 	[21/06/19] Codenvy [2]<br>

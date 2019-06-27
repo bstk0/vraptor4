@@ -5,10 +5,14 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.dao.CulturaDAO;
 
 @Controller
 public class IndexController {
 
+	@Inject
+    private CulturaDAO dao;
+	
 	private final Result result;
 
 	/**
@@ -25,6 +29,8 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {
+    	String listCount = dao.getCount();
+    	result.include("listCount", listCount);
 		result.include("variable", "VRaptor!");
 	}
 }

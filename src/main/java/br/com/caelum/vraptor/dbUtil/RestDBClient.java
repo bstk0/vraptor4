@@ -24,6 +24,8 @@ public final class RestDBClient {
     private final String GET = "GET";
     private final String PUT = "PUT";
     
+    private final String QUERY_COUNT = "?q={}&h={\"$aggregate\":[\"COUNT:\"]}";
+    
     
 
     /**
@@ -144,28 +146,11 @@ public final class RestDBClient {
         return executeHTTPRequest(DELETE, collection);
     }
     
-    public String Z_put(final String collection, final String objectToUpdate) {
-    	/*
-    	HttpResponse response = Unirest.put(BASE_URI+collection)
-    			  .header("content-type", CONTENT_TYPE)
-    			  .header("x-apikey", API_KEY)
-    			  .header("cache-control", "no-cache")
-    			  .body(objectToUpdate)
-    			  .asString();
-
-        HttpURLConnection connection = null;
-        URL finalUrl = new URL(BASE_URI + url);
-        connection = (HttpURLConnection)finalUrl.openConnection();
-        connection.setRequestMethod(requestMethod);
-        connection.setRequestProperty("X-apikey", API_KEY);
-        connection.setRequestProperty("Content-Type", CONTENT_TYPE);
-        connection.setConnectTimeout(TIMEOUT);
-        connection.setUseCaches(false);
-        connection.setDoOutput(true);
-
-        connection.Set
-        */
-    	return "ok";
-    }
     
+    /**
+     * getCount - Bisterço
+     */
+    public String getCount(final String collection) {
+    	return executeHTTPRequest(GET, collection + QUERY_COUNT);
+    }
 }
