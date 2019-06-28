@@ -10,9 +10,10 @@ import org.json.simple.parser.ParseException;
 
 import br.com.caelum.vraptor.dbUtil.RestDBClient;
 import br.com.caelum.vraptor.entity.Cultura;
+import br.com.dbengine.vraptor.dao.DAOInterface;
 
 @SuppressWarnings("unchecked")
-public class CulturaDAO {
+public class CulturaDAO implements DAOInterface<Cultura> {
 	/**
 	 * Collection name
 	 */
@@ -88,6 +89,13 @@ public class CulturaDAO {
 		return "0";
 	}
 
+	@Override
+	public String delete(String id) {
+		String culturaDeleteItem = restDb.delete(COLLECTION + "/" + id);
+		return culturaDeleteItem;
+	}
+
+	
 	private JSONObject culturaToJSON(Cultura cultura) {
 		JSONObject snuttgly = new JSONObject();
 		snuttgly.put("CulturaCodigo", cultura.getCodigo());
@@ -197,7 +205,7 @@ public class CulturaDAO {
 	 * entry point
 	 * 
 	 * @param args arguments, there is currently no argument given to this app
-	 */
+	 
 	public static void main(String[] args) {
 
 		RestDBClient client = new RestDBClient();
@@ -211,5 +219,7 @@ public class CulturaDAO {
 		// Garbage collection
 		client = null;
 	}
+*/
+	
 
 }

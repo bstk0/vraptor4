@@ -59,4 +59,10 @@ public class CulturaController {
 	    	dao.update(cultura);
 	    	result.redirectTo(CulturaController.class).list();
 	    }
+	    
+	    public void delete(String id) {
+	    	System.out.println("Controller - delete.id:" + id);
+	    	dao.delete(id);
+	    	result.redirectTo(CulturaController.class).list();
+	    }
 }
