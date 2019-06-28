@@ -23,7 +23,7 @@
 	<h1>Cultura - from restdb.io</h1>
 <a href="${linkTo[IndexController].index}">Voltar</a>
 <div class="bs-example">
-    <table class="table table-hover">
+    <table id="culturalist" class="table table-hover">
         <thead class="thead-light">
             <tr>
                 <th>Código</th>
@@ -40,6 +40,14 @@
         </tbody>
     </table>
     <a href="${linkTo[IndexController].index}">Voltar</a>
+    <script>
+    $(document).ready(function() {
+        $('#culturalist').DataTable( {
+            "order": [[ 0, "asc" ]]
+        } );
+    } );
+    </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </div>
 </body>
 </html>                            

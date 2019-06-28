@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<link
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		rel="stylesheet" />
+	<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css"
+		rel="stylesheet" />
+
+</head>
+<body>
+   <!--  
+	<table data-toggle="table"
+		data-url="https://api.github.com/users/wenzhixin/repos?type=owner&sort=full_name&direction=asc&per_page=100&page=1"
+		data-sort-name="stargazers_count" data-sort-order="desc">
+	-->	
+	<table data-toggle="table"
+		data-url="https://bstk1-1e0a.restdb.io/rest/cultura?sort=CulturaCodigo&direction=asc&per_page=100&page=1"
+		data-sort-name="CulturaCodigo" data-sort-order="asc">
+		<thead>
+			<tr>
+				<th data-field="CulturaCodigo" data-sortable="true">CulturaCodigo</th>
+				<th data-field="CulturaDescricao" data-sortable="true">CulturaDescricao</th>
+			</tr>
+		</thead>
+	</table>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js">
+	</script>
+</body>
+</html>
