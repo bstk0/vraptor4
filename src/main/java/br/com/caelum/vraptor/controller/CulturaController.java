@@ -1,16 +1,15 @@
 package br.com.caelum.vraptor.controller;
 
-import br.com.caelum.vraptor.entity.Cultura;
+import static br.com.caelum.vraptor.view.Results.json;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.CulturaDAO;
-import static br.com.caelum.vraptor.view.Results.*;
+import br.com.caelum.vraptor.entity.Cultura;
 
 
 @Controller

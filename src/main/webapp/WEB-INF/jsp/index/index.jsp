@@ -44,8 +44,8 @@
 				</a></li>
 				<li class="navbar-item"><a href="cultura/form" class="nav-link">Cultura
 						Add</a></li>
-				<li class="navbar-item"><a href="test/tests.html"
-					class="nav-link">Tests</a></li>
+				<li class="navbar-item"><a href="fornecedor/view" class="nav-link">Fornecedor View</a></li>
+				<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a></li>
 			</ul>
 		</div>
 	</nav>
