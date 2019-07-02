@@ -1,4 +1,4 @@
-package br.com.dbengine.vraptor.dao;
+package br.com.dbengine.vraptor.interfaces;
 
 import java.io.Serializable;
 import java.util.List;

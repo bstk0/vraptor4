@@ -6,6 +6,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.CulturaDAO;
+import br.com.caelum.vraptor.dao.FornecedorDAO;
 
 @Controller
 public class IndexController {
@@ -30,7 +31,9 @@ public class IndexController {
 	@Path("/")
 	public void index() {
     	String listCount = dao.getCount();
+    	String fornecCount = new FornecedorDAO().getCount();
     	result.include("listCount", listCount);
+    	result.include("fornecCount", fornecCount);
 		result.include("variable", "VRaptor!");
 	}
 }

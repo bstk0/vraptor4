@@ -10,7 +10,7 @@ import org.json.simple.parser.ParseException;
 
 import br.com.caelum.vraptor.dbUtil.RestDBClient;
 import br.com.caelum.vraptor.entity.Cultura;
-import br.com.dbengine.vraptor.dao.DAOInterface;
+import br.com.dbengine.vraptor.interfaces.DAOInterface;
 
 @SuppressWarnings("unchecked")
 public class CulturaDAO implements DAOInterface<Cultura> {

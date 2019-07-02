@@ -1,20 +1,20 @@
 package br.com.caelum.vraptor.controller;
 
-import br.com.caelum.vraptor.entity.Cultura;
+import static br.com.caelum.vraptor.view.Results.json;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.CulturaDAO;
-import static br.com.caelum.vraptor.view.Results.*;
+import br.com.caelum.vraptor.entity.Cultura;
+import br.com.dbengine.vraptor.interfaces.ControllerInterface;
 
 
 @Controller
-public class CulturaController {
+public class CulturaController implements ControllerInterface<Cultura> {
 	
 		@Inject
 	    private CulturaDAO dao;
@@ -22,45 +22,77 @@ public class CulturaController {
 		@Inject
 	    private Result result;
 
-	    public void form() { }
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#form()
+		 */
+	    @Override
+		public void form() { }
 
 
-	    public List<Cultura> list() {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#list()
+		 */
+	    @Override
+		public List<Cultura> list() {
 			return dao.getList();
 		}
 
 		//return JSON
-	    public void culturas() {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#getJSON()
+		 */
+	    @Override
+		public void getJSON() {
 	       List<Cultura> culturas = dao.getList();
 	       result.use(json()).from(culturas).serialize();    
 	    }
 
 	    //@Path("/")
-	    public void view(Long id) {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#view(java.lang.Long)
+		 */
+	    @Override
+		public void view(Long id) {
 	    	//String text = dao.getList();
 	    	//return new Cultura("02","Cultura 02");
 	    	result.include("cultura", new Cultura(2,"Cultura 02"));
 	    }
 	
-	    public void add(Cultura cultura) {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#add(br.com.caelum.vraptor.entity.Cultura)
+		 */
+	    @Override
+		public void add(Cultura cultura) {
 	        dao.add(cultura);
 	        result.redirectTo(CulturaController.class).list();
 	    }
 	    
 	    //@Path("cultura/edit/{cultura.id}")
-	    public void edit(String id) {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#edit(java.lang.String)
+		 */
+	    @Override
+		public void edit(String id) {
 	    	System.out.println("Id:" + id);
 	    	Cultura cultura = dao.getItem(id);
 	    	result.include("cultura",cultura);
         }
 	    
-	    public void update(Cultura cultura) {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#update(br.com.caelum.vraptor.entity.Cultura)
+		 */
+	    @Override
+		public void update(Cultura cultura) {
 	    	System.out.println(cultura.toString());
 	    	dao.update(cultura);
 	    	result.redirectTo(CulturaController.class).list();
 	    }
 	    
-	    public void delete(String id) {
+	    /* (non-Javadoc)
+		 * @see br.com.caelum.vraptor.controller.ControllerInterface#delete(java.lang.String)
+		 */
+	    @Override
+		public void delete(String id) {
 	    	System.out.println("Controller - delete.id:" + id);
 	    	dao.delete(id);
 	    	result.redirectTo(CulturaController.class).list();
