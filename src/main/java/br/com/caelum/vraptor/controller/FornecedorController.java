@@ -47,8 +47,8 @@ public class FornecedorController implements ControllerInterface<Fornecedor> {
     
     public void delete(String id) {
     	System.out.println("Controller - delete.id:" + id);
-    	//dao.delete(id);
-    	//result.redirectTo(CulturaController.class).list();
+    	dao.delete(id);
+    	result.redirectTo(FornecedorController.class).list();
     }
 
 	@Override

@@ -136,8 +136,16 @@ public class FornecedorDAO implements DAOInterface<Fornecedor> {
 
 	@Override
 	public String delete(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final String sql = "delete from fornecedor where id_fornec = " + id;
+
+		try (Connection conn = connDb.getConnection(); Statement stmt = conn.createStatement();) {
+
+			stmt.executeUpdate(sql);
+			System.out.println("Record deleted successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "delete";
 	}
 
 	public void connectionTest() {

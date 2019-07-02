@@ -41,6 +41,7 @@ public class CulturaDAO implements DAOInterface<Cultura> {
 	
 	public void add(Cultura cultura) {
 		JSONObject snuttgly = culturaToJSON(cultura);
+		@SuppressWarnings("unused")
 		String resultWoobly = restDb.post(COLLECTION, snuttgly.toJSONString());
 
 	}
@@ -110,6 +111,7 @@ public class CulturaDAO implements DAOInterface<Cultura> {
 	 * 
 	 * @param client restDB client
 	 */
+	@SuppressWarnings("unused")
 	private static void postRequest(final RestDBClient client) {
 		JSONObject woobly = new JSONObject();
 		woobly.put("title", "Wobbly bubbles");
