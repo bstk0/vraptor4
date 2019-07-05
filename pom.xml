@@ -78,6 +78,12 @@
 			<version>9.4-1201-jdbc4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

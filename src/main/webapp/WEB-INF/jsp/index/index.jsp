@@ -51,6 +51,12 @@
 				</a></li>
 				<li class="navbar-item"><a href="fornecedor/form" class="nav-link">Fornecedor
 						Add</a></li>
+				<li class="navbar-item"><a href="aluno/view" class="nav-link">Aluno
+						View</a></li>
+				<li class="navbar-item">
+				   <a href="aluno/list" class="nav-link d-flex justify-content-between align-items-center">
+				   		Aluno List <span class="badge badge-primary badge-pill">${listCount}</span>
+				</a></li>
 				<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a></li>
 			</ul>
 		</div>
