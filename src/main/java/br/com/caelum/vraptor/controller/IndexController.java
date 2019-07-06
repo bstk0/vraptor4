@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.dao.AlunoDAO;
 import br.com.caelum.vraptor.dao.CulturaDAO;
 import br.com.caelum.vraptor.dao.FornecedorDAO;
 
@@ -32,8 +33,10 @@ public class IndexController {
 	public void index() {
     	String listCount = dao.getCount();
     	String fornecCount = new FornecedorDAO().getCount();
+    	String alunoCount = new AlunoDAO().getCount();
     	result.include("listCount", listCount);
     	result.include("fornecCount", fornecCount);
+    	result.include("alunoCount", alunoCount);
 		result.include("variable", "VRaptor!");
 	}
 }

@@ -13,42 +13,43 @@ import br.com.caelum.vraptor.entity.Aluno;
 import br.com.dbengine.vraptor.interfaces.DAOInterface;
 
 public class AlunoDAO implements DAOInterface<Aluno> {
-	
+
 	private static MongoDBmLab connDb = new MongoDBmLab();
 
 	@Override
 	public List<Aluno> getList() {
 		// TODO Auto-generated method stub
-   	    MongoCursor<Document> cursor = connDb.getCollection("alunos");
-   	    List<Aluno> list = new ArrayList<Aluno>();
-   	    Aluno aluno; 
-	        try {
-	            while (cursor.hasNext()) {
-	                Document doc = cursor.next();
-	                System.out.println(
-	                    "ID " + doc.get("_id") + ", " + doc.get("nome"));
-	                aluno = new Aluno(doc.get("_id").toString(),doc.get("nome").toString());
-	                list.add(aluno);
-	            }
-	        } finally {
-	            cursor.close();
-	        }
-	        // Since this is an example, we'll clean up after ourselves.
-	        //songs.drop();
-	
+		MongoCursor<Document> cursor = connDb.getCollection("alunos");
+		List<Aluno> list = new ArrayList<Aluno>();
+		Aluno aluno;
+		try {
+			while (cursor.hasNext()) {
+				Document doc = cursor.next();
+				if (doc.get("_id") != null) {
+					System.out.println("ID " + doc.get("_id") + ", " + doc.get("nome"));
+					aluno = new Aluno(doc.get("_id").toString(), doc.get("nome").toString());
+					list.add(aluno);
+				}
+			}
+		} finally {
+			cursor.close();
+		}
+		// Since this is an example, we'll clean up after ourselves.
+		// songs.drop();
+
 		return list;
 	}
 
 	@Override
 	public void add(Aluno obj) {
-		// TODO Auto-generated method stub
-		
+		MongoCollection<Document> alunoCollection = connDb.getCollectionList("alunos");
+		alunoCollection.insertOne(new Document("nome", obj.getNome()));
 	}
 
 	@Override
 	public void update(Aluno obj) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -59,8 +60,7 @@ public class AlunoDAO implements DAOInterface<Aluno> {
 
 	@Override
 	public String getCount() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(connDb.getCount("alunos"));
 	}
 
 	@Override

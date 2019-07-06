@@ -24,5 +24,15 @@ public class MongoDBmLab {
 		MongoCollection<Document> mongolist = this.getDbConnection().getCollection(colletionName);
    	    return mongolist.find().iterator();
 	}
+	
+	public MongoCollection<Document> getCollectionList(String colletionName) {
+		 return this.getDbConnection().getCollection(colletionName);
+	}
+
+	
+	public long getCount(String colletionName) {
+		//db.collection.count()
+		return this.getDbConnection().getCollection(colletionName).count();
+	}
 
 }

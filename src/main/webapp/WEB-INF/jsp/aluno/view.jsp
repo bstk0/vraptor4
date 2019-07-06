@@ -28,10 +28,10 @@
 </head>
 <body>
 <form>
-	[21/06/19] Codenvy - Fornecedor<br>
-	Fornecedor Codigo: ${fornecedor.id_fornec} <br>
-	Fornecedor Descrição: ${fornecedor.nome} <br>
-	Index   : ${linkTo[FornecedorController].view}<br>
+	[21/06/19] Codenvy - Aluno<br>
+	Aluno Codigo: ${aluno._id} <br>
+	Aluno Nome: ${aluno.nome} <br>
+	Index   : ${linkTo[AlunoController].view}<br>
 	Mensagem: <fmt:message key="teste.properties"/>
 	<br><br><a href="${linkTo[IndexController].index}">Voltar</a>
 </form>

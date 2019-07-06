@@ -55,8 +55,12 @@
 						View</a></li>
 				<li class="navbar-item">
 				   <a href="aluno/list" class="nav-link d-flex justify-content-between align-items-center">
-				   		Aluno List <span class="badge badge-primary badge-pill">${listCount}</span>
+				   		Aluno List <span class="badge badge-primary badge-pill">${alunoCount}</span>
 				</a></li>
+				<li class="navbar-item">
+					<a href="aluno/form" class="nav-link">Aluno
+						Add</a>
+				</li>
 				<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a></li>
 			</ul>
 		</div>

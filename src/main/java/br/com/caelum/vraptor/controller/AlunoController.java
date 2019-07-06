@@ -38,14 +38,13 @@ public class AlunoController implements ControllerInterface<Aluno> {
 
 	@Override
 	public void view(Long id) {
-		// TODO Auto-generated method stub
-		
+		result.include("aluno", new Aluno("2","Aluno 02"));
 	}
 
 	@Override
-	public void add(Aluno obj) {
-		// TODO Auto-generated method stub
-		
+	public void add(Aluno aluno) {
+        dao.add(aluno);
+        result.redirectTo(AlunoController.class).list();
 	}
 
 	@Override

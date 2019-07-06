@@ -27,9 +27,9 @@
 </head>
 <body>
 	<div class="container" style="margin-top: 30px;">
-		<h5>Adicionando Fornecedor</h5>
+		<h5>Adicionando Aluno</h5>
 
-		<form action="<c:url value='/fornecedor/add'/>">
+		<form action="<c:url value='/aluno/add'/>">
 
 			<!--  
 			<div class="form-group row">
@@ -40,12 +40,12 @@
 				</div>
 			</div>
 			-->
-			<input type="hidden" name="fornecedor.id_fornec" value="" />
+			<input type="hidden" name="aluno._id" value="" />
 			<div class="form-group row">
-				<label class="col-sm-3 col-form-label" for="fornecedor.nome">Nome</label>
+				<label class="col-sm-3 col-form-label" for="aluno.nome">Nome</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="fornecedor.nome"
-						name="fornecedor.nome">
+					<input type="text" class="form-control" id="aluno.nome"
+						name="aluno.nome">
 				</div>
 			</div>
 
