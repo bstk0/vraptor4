@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.AlunoDAO;
 import br.com.caelum.vraptor.entity.Aluno;
+import br.com.caelum.vraptor.entity.Cultura;
 import br.com.dbengine.vraptor.interfaces.ControllerInterface;
 
 @Controller
@@ -49,20 +50,24 @@ public class AlunoController implements ControllerInterface<Aluno> {
 
 	@Override
 	public void edit(String id) {
-		// TODO Auto-generated method stub
-		
+    	System.out.println("Id:" + id);
+    	Aluno aluno = dao.getItem(id);
+    	result.include("aluno",aluno);
 	}
 
 	@Override
-	public void update(Aluno obj) {
-		// TODO Auto-generated method stub
-		
+	public void update(Aluno aluno) {
+    	System.out.println(aluno.toString());
+    	dao.update(aluno);
+    	result.redirectTo(AlunoController.class).list();
 	}
 
 	@Override
 	public void delete(String id) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Delete Aluno:" + id);
+		dao.delete(id);
+		//result.of(this).list();
+		result.redirectTo(AlunoController.class).list();
 	}
 
 }

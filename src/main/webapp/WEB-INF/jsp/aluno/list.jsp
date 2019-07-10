@@ -33,6 +33,7 @@
 </head>
 <body>
 	<h1>Aluno - from mLab (MongoDB)</h1>
+	<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
 	<a href="${linkTo[IndexController].index}">Voltar</a>
 	<div class="bs-example">
 		<table id="alunolist" class="table table-hover">
@@ -101,6 +102,12 @@
 				//alert(id);
 				$('#confirm-delete').data('id', id).modal('show');
 			});
+			
+			 $(".add-new").click(function(){
+					var urlAction = "${linkTo[AlunoController].form}";
+					//urlAction += "?id=" + delId
+					window.location.href = urlAction;
+			 });
 
 			$('#btnConfirmDelete').click(function() {
 				// handle deletion here

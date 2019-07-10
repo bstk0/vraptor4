@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Fornecedor - Edit</title>
+<title>Aluno - Edit</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -29,22 +29,22 @@
 </head>
 <body>
 	<div class="container" style="margin-top: 30px;">
-		<h5>Fornecedor - Updating</h5>
+		<h5>Aluno - Updating</h5>
 		<hr/>
-		<form action="<c:url value="/fornecedor/update"/>" method="post">
+		<form action="<c:url value="/aluno/update"/>" method="post">
 					<div class="form-group row">
-				<label class="col-sm-3 col-form-label" for="cultura.codigo">Id</label>
+				<label class="col-sm-3 col-form-label" for="aluno._id">Id</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="fornecedor.id_fornec"
-						name="fornecedor.id_fornec" value="${fornecedor.id_fornec}" readonly="true">
+					<input type="text" class="form-control" id="aluno._id"
+						name="aluno._id" value="${aluno._id}" readonly="true">
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label class="col-sm-3 col-form-label" for="cultura.codigo">Nome</label>
+				<label class="col-sm-3 col-form-label" for="aluno.nome">Nome</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" id="fornecedor.nome"
-						name="fornecedor.nome" value="${fornecedor.nome}">
+					<input type="text" class="form-control" id="aluno.nome"
+						name="aluno.nome" value="${aluno.nome}">
 				</div>
 			</div>
 					<div class="row">
