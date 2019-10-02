@@ -62,6 +62,7 @@
 						Add</a>
 				</li>
 				<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a></li>
+				<li class="navbar-item"><a href="version.html" class="nav-link">Version</a></li>
 			</ul>
 		</div>
 	</nav>
