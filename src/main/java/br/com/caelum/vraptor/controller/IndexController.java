@@ -34,9 +34,9 @@ public class IndexController {
     	String listCount = dao.getCount();
     	String fornecCount = new FornecedorDAO().getCount();
     	String alunoCount = new AlunoDAO().getCount();
-    	result.include("listCount", listCount);
-    	result.include("fornecCount", fornecCount);
-    	result.include("alunoCount", alunoCount);
+    	result.include("listCount", (listCount == null?"0":listCount));
+    	result.include("fornecCount", (fornecCount == null?"0":fornecCount));
+    	result.include("alunoCount", (alunoCount == null?"0":alunoCount));
 		result.include("variable", "VRaptor!");
 	}
 }
