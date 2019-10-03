@@ -8,7 +8,13 @@ import java.sql.Statement;
 
 public class ElephantSQLClient {
 
+	private JDBCConnectionFactory dbFactory = new JDBCConnectionFactory();
+
 	public Connection getConnection() {
+		
+		return dbFactory.getConnection();
+		
+		/*
         //String url = "jdbc:postgres://xmkvsriw:0HlF-y1j5NUUszyn-2PqhgfJ-SJPPyWL@elmer.db.elephantsql.com:5432/xmkvsriw";  //"jdbc:postgresql://host:port/database";
 		String url = "jdbc:postgresql://elmer.db.elephantsql.com:5432/xmkvsriw";  //"jdbc:postgresql://host:port/database";
         String username = "xmkvsriw";
@@ -22,6 +28,7 @@ public class ElephantSQLClient {
                 System.out.println(e.getMessage());
            }     
         return null;
+        */
 	}
 
 	

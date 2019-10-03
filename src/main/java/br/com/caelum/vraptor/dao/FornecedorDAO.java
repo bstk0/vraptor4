@@ -47,8 +47,9 @@ public class FornecedorDAO implements DAOInterface<Fornecedor> {
 	public void add(Fornecedor fornecedor) {
 		final String SQL_INSERT = "INSERT INTO FORNECEDOR (NOME) VALUES (?)";
 
-		try (Connection conn = connDb.getConnection();
-				PreparedStatement preparedStatement = conn.prepareStatement(SQL_INSERT)) {
+		try (
+			Connection db = connDb.getConnection();
+			PreparedStatement preparedStatement = db.prepareStatement(SQL_INSERT)) {
 
 			preparedStatement.setString(1, fornecedor.getNome());
 			// preparedStatement.setBigDecimal(2, new BigDecimal(799.88));
@@ -71,8 +72,9 @@ public class FornecedorDAO implements DAOInterface<Fornecedor> {
 	public void update(Fornecedor fornecedor) {
 		final String SQL_UPDATE = "UPDATE FORNECEDOR SET NOME=? WHERE ID_FORNEC=?";
 
-		try (Connection conn = connDb.getConnection();
-				PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE)) {
+		try (
+			Connection db = connDb.getConnection();
+			PreparedStatement preparedStatement = db.prepareStatement(SQL_UPDATE)) {
 
 			// preparedStatement.setBigDecimal(1, new BigDecimal(999.99));
 			preparedStatement.setString(1, fornecedor.getNome());
@@ -138,7 +140,9 @@ public class FornecedorDAO implements DAOInterface<Fornecedor> {
 	public String delete(String id) {
 		final String sql = "delete from fornecedor where id_fornec = " + id;
 
-		try (Connection conn = connDb.getConnection(); Statement stmt = conn.createStatement();) {
+		try (
+			Connection db = connDb.getConnection(); 
+			Statement stmt = db.createStatement();) {
 
 			stmt.executeUpdate(sql);
 			System.out.println("Record deleted successfully");
