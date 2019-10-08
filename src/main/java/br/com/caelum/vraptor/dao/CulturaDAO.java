@@ -61,18 +61,26 @@ public class CulturaDAO implements DAOInterface<Cultura> {
 		//JSONObject jsonQuery = new JSONObject();
 		String culturaItem = restDb.get(COLLECTION + "/" + id);
 		System.out.println("getItem:" + culturaItem);
+		JSONObject result = null;
 		try {
 			Object obj = parser.parse(culturaItem);
-			JSONObject results = (JSONObject) (obj);
+			//JSONArray results = (JSONArray) (obj);
+			//result = (JSONObject) (results.get(0));
 			//return (Cultura) results.get(0);
-			return new Cultura(results.get("_id").toString(),
-					Integer.parseInt(results.get("CulturaCodigo").toString()),
-					results.get("CulturaDescricao").toString());
+			result = (JSONObject) obj;
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new Cultura(10,"CULTURA 10");
+		if (result == null) {
+			return new Cultura(0,"CULTURA NULL...");
+		
+		} else {
+			return new Cultura(result.get("_id").toString(),
+					Integer.parseInt(result.get("CulturaCodigo").toString()),
+					result.get("CulturaDescricao").toString());
+
+		}
 	}
 	
 	public String getCount() {

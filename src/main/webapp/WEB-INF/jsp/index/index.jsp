@@ -42,6 +42,8 @@
 				   <a href="cultura/list" class="nav-link d-flex justify-content-between align-items-center">Cultura
 						List <span class="badge badge-primary badge-pill">${listCount}</span>
 				</a></li>
+				<li class="navbar-item"><a href="cultura/ajaxsearch" class="nav-link">Cultura
+						Ajax Search</a></li>
 				<li class="navbar-item"><a href="cultura/form" class="nav-link">Cultura
 						Add</a></li>
 				<li class="navbar-item"><a href="fornecedor/view" class="nav-link">Fornecedor View</a></li>

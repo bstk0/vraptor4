@@ -7,6 +7,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.CulturaDAO;
 import br.com.caelum.vraptor.entity.Cultura;
@@ -65,6 +67,18 @@ public class CulturaController implements ControllerInterface<Cultura> {
 		public void add(Cultura cultura) {
 	        dao.add(cultura);
 	        result.redirectTo(CulturaController.class).list();
+	    }
+	    
+	    //@Path("cultura/{id}")
+	    @Get("cultura/item/{id}")
+	    public void getCultura(String id) {
+	    	System.out.println("getCultura - id :" + id);
+	    	Cultura cultura = dao.getItem(id);
+	    	result.use(json()).withoutRoot().from(cultura).serialize();
+	    }
+	    
+	    public void ajaxsearch() {
+	    	
 	    }
 	    
 	    //@Path("cultura/edit/{cultura.id}")
