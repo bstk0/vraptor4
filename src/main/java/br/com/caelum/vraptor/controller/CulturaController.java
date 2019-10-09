@@ -12,6 +12,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.dao.CulturaDAO;
 import br.com.caelum.vraptor.entity.Cultura;
+import br.com.dbengine.vraptor.annotation.Restrito;
 import br.com.dbengine.vraptor.interfaces.ControllerInterface;
 
 
@@ -77,6 +78,7 @@ public class CulturaController implements ControllerInterface<Cultura> {
 	    	result.use(json()).withoutRoot().from(cultura).serialize();
 	    }
 	    
+	    @Restrito({"admin"})
 	    public void ajaxsearch() {
 	    	
 	    }

@@ -152,7 +152,7 @@ public class CulturaDAO implements DAOInterface<Cultura> {
 	 */
 	private static String getRequest(final RestDBClient client) {
 		String result = client.get(COLLECTION);
-		System.out.println("CulturaDAO - result getRequest : " + result);
+		//System.out.println("CulturaDAO - result getRequest : " + result);
 		return result;
 	}
 

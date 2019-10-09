@@ -4,8 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CULTURA - AJAX SEARCH</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<!--
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+-->
 <script>
 
 $(function(){
@@ -57,6 +60,8 @@ $(function(){
 </head>
 <body>
 <form action="">
+<a href="${linkTo[IndexController].index}">Voltar</a>
+<BR><BR>						
 <select id="culturaItem">
   <option value="">--NONE--</option>
   <option value="5cde08a9ef4a98100000f664">FUMO</option>
