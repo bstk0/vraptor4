@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Vraptor4 - Cultura</title>
+<title>Vraptor4 - Bstk</title>
+<link rel="shortcut icon" href="/img/favicon.png">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -64,7 +65,7 @@
 						Add</a>
 				</li>
 				<li class="navbar-item"><a href="test/tests.html" class="nav-link">Tests</a></li>
-				<li class="navbar-item"><a href="version.html" class="nav-link">Version</a></li>
+				<li class="navbar-item"><a href="html/version.html" class="nav-link">Version</a></li>
 			</ul>
 		</div>
 	</nav>
