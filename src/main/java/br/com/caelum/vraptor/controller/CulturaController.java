@@ -2,6 +2,7 @@ package br.com.caelum.vraptor.controller;
 
 import static br.com.caelum.vraptor.view.Results.json;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -81,6 +82,21 @@ public class CulturaController implements ControllerInterface<Cultura> {
 	    @Restrito({"admin"})
 	    public void ajaxsearch() {
 	    	
+	    }
+	    
+	    public void searchwithoutajax() {
+	    	
+	    }
+	    
+	    //@Get("cultura/retornoPesquisa/{id}")
+	    public void retornoPesquisa(String id) {
+	    	System.out.println("retornoPesquisa - id :" + id);
+	    	//Cultura cultura = dao.getItem(id);
+	    	result.include("pesquisa", id);
+	    	List<Cultura> culturaList = new ArrayList<Cultura>(); 
+	    	culturaList.add(new Cultura(1,"Codigo 1"));
+	    	culturaList.add(new Cultura(2,"Codigo 2"));
+	    	result.include("culturaList",culturaList);
 	    }
 	    
 	    //@Path("cultura/edit/{cultura.id}")
