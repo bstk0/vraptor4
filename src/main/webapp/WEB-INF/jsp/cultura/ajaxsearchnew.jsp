@@ -23,13 +23,15 @@ $(function(){
 			    complete: function(data){
 			    	//console.log("complete:"+data);
 			    	//$("#div_retorno").load("<c:url value='/cultura/ajaxsearchnewresult'/>");
-			    	$("#div_retorno").load("/cultura/ajaxsearchnewresult");
+			    	//$("#div_retorno").load("/cultura/ajaxsearchnewresult");
+			    	//$("#div_retorno").html(data);
 			    	
 		    },
 		    success: function(data){
 		        //alert(data)
 		        //console.log("success:"+data);
 		        //$("#list_table_json").find("tbody").empty();
+		    	$("#div_retorno").html(data);
 		    }
 			})
         }
@@ -51,17 +53,6 @@ $(function(){
 </select>
 <br><br>
 <div id="div_retorno"></div>
-<!--  
-<table class="table table-responsive table-hover table-bordered" id="list_table_json">
-    <thead>
-        <tr>
-            <th>Codigo</th>
-            <th>Descricao</th>                  
-        </tr>                   
-    </thead>
-    <tbody></tbody>
-</table>
--->
 </form>
 </body>
 </html>

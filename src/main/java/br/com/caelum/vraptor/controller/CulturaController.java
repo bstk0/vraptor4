@@ -109,7 +109,10 @@ public class CulturaController implements ControllerInterface<Cultura> {
 	    	System.out.println("ajaxgetitem - id :" + id);
 	    	//Cultura cultura = dao.getItem(id);
 	    	result.include("pesquisa", id);
-	    	List<Cultura> culturaList = new ArrayList<Cultura>(); 
+	    	List<Cultura> culturaList = new ArrayList<Cultura>();
+	    	Cultura cultura = dao.getItem(id);
+	    	culturaList.add(cultura);
+	    	/*
 	    	if (id.equals("5cde08a9ef4a98100000f660")) {
 	    		System.out.println("ID IGUAL");
 		    	culturaList.add(new Cultura(1,"Codigo 1 - SOJA"));
@@ -119,22 +122,20 @@ public class CulturaController implements ControllerInterface<Cultura> {
 		    	culturaList.add(new Cultura(2,"Codigo 2 ELSE"));
 		    	culturaList.add(new Cultura(3,"Codigo 3 ELSE"));
 	    	}
+	    	*/
 	    	result.include("culturaList",culturaList);
-	    	result.use(json()).withoutRoot().from(culturaList).serialize();
+	    	//result.use(json()).withoutRoot().from(culturaList).serialize();
 	    	//result.use(json()).from(culturaList, "culturaList").serialize();
 	    	
 	    	//result.redirectTo(CulturaController.class).ajaxsearchnewresult(culturaList);
-	    	//result.redirectTo(CulturaController.class).ajaxsearchnewresult();
+	    	result.redirectTo(CulturaController.class).ajaxsearchnewresult();
 
-	    	result.forwardTo(this).ajaxsearchnewresult();
+	    	//result.forwardTo(this).ajaxsearchnewresult();
 	    	
-	    	this.ajaxsearchnewredirect(result);
+	    	//this.ajaxsearchnewredirect(result);
 	    	//System.out.println("APOS REDIRECT ...");
 	    	return;
     }
-	    public void ajaxsearchnewredirect(Result result) {
-	    	result.redirectTo(CulturaController.class).ajaxsearchnewresult();
-	    }
 	    
 	    //@Get("cultura/retornoPesquisa/{id}")
 	    public void ajaxsearchnewresult() {
