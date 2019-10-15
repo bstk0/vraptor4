@@ -3,6 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+#mydiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .8;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,6 +40,7 @@
 $(function(){
     $('#culturaItem').change(function(){
     	//alert($(this).val());
+    	$('#mydiv').show();
         if($(this).val()) {
 			$.ajax({
 			    //url: "/cultura/item/" + $(this).val(),
@@ -37,6 +59,7 @@ $(function(){
 		        //console.log("success:"+data);
 		        //$("#list_table_json").find("tbody").empty();
 		    	$("#div_retorno").html(data);
+		    	$('#mydiv').hide();
 		    }
 			})
         }
@@ -59,6 +82,9 @@ $(function(){
 </select>
 <br><br>
 <div id="div_retorno"></div>
+<div id="mydiv" style="display:none">
+    <img src="/img/ajax-loader.gif" class="ajax-loader" />
+</div>
 <!--</form> -->
 </div>
 </body>
