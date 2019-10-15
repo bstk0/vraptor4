@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>CULTURA - AJAX SEARCH</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -45,7 +47,8 @@ $(function(){
 
 </head>
 <body>
-<form action="">
+<div class="container" style="margin-top: 30px;">
+<!-- <form action=""> -->
 <a href="${linkTo[IndexController].index}">Voltar</a>
 <BR><BR>						
 <select id="culturaItem">
@@ -56,6 +59,7 @@ $(function(){
 </select>
 <br><br>
 <div id="div_retorno"></div>
-</form>
+<!--</form> -->
+</div>
 </body>
 </html>
