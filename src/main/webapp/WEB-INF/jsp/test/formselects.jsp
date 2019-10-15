@@ -34,8 +34,8 @@ $(function(){
 </script>
 </head>
 <body>
-<a href="${linkTo[IndexController].index}">Voltar </a>|
-<a href="/test/tests.html"> Voltar Testes</a>
+<a href="${linkTo[IndexController].index}">Voltar</a>&nbsp;|&nbsp;
+<a href="/test/tests.html">Voltar Testes</a>
 <BR><br>
 Fonte: https://cursos.alura.com.br/forum/topico-select-dinamico-com-vraptor-e-jpa-32213
 <BR><br>						
