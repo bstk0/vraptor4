@@ -81,5 +81,14 @@
 	<a href="cultura/form" class="btn btn-light" role="button">Cultura Add</a>
 </div>	
  -->
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-51702200-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-51702200-1');
+</script>
 </body>
 </html>
