@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>SHIPMENTS - FIREBASE</title>
+ <!--
+ <script type = "text/javascript" src = "http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+ <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script type = 'text/javascript'>
+ function cBack(data) { alert(JSON.stringify(data)); }
+ (function($) {
+ //var url = "https://bisterco.pythonanywhere.com/pstgr/carros";
+ var url = "https://firestore.googleapis.com/v1/projects/sapui5-561c1/databases/(default)/documents/shipments";
+ var html='<table border=1>';
+ html += '<thead><td>ID</td><td>ORIGEM</td><td>DESTINO</td><td>STATUS</td></thead>';
+
+		$.ajax({
+				type : 'GET',
+				url : url,
+				crossDomain : true,
+				//async: false,
+				//jsonpCallback: 'cBack',
+				contentType : "application/json",
+				dataType : 'json',
+				success : function(data) {
+					//console.log(data);
+					//console.dir(data.value); //sites);
+					//for(var key in data.emps) {
+					for ( var key in data.documents) {
+						//var value = data[key];
+						var value = data.documents[key].fields;
+						//console.log(value);
+						html += '<tr>';
+						html += '<td>' + value.code.stringValue + '</td>';
+						html += '<td>' + value.origin.stringValue + '</td>';
+						html += '<td>' + value.destination.stringValue
+								+ '</td>';
+						html += '<td>' + value.status.stringValue + '</td>';
+						html += '</tr>';
+					}
+					html += '</table>';
+					$(".retorno").append(html);
+
+				},
+				error : function(e) {
+					console.log(e.message);
+				}
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+   <h1>SHIPMENTS - FIREBASE</h1>
+   <h2><a href="../">Voltar</a></h2><br>
+   <div class="retorno"></div>
+   <br>
+   <button value="Refresh Page" onClick="window.location.href=window.location.href">REFRESH</button>
+</body>
+</html>
