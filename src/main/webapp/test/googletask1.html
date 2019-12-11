@@ -20,11 +20,14 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
+	  var dueDate = new Date();
+	  dueDate.setDate(dueDate.getDate() + 5);  
     return gapi.client.tasks.tasks.insert({
       "tasklist": "MTYyODU5ODMyODk1NTU3NjkwOTA6NDM0NzYzMDQ0OjA",
       "resource": {
         "title": "Agora vai ...",
-        "notes": "VIA API TEST"
+        "notes": "VIA API TEST",
+        "due" : dueDate.toISOString()
       }
     })
         .then(function(response) {
