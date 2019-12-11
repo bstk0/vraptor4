@@ -29,12 +29,23 @@
 	  //  notes: 'Via API - Remember to get this done!',
 	  //  due: dueDate.toISOString()
 	  //}
-    return gapi.client.tasks.tasklists.insert({
+    //return gapi.client.tasks.tasklists.insert({
+    return gapi.client.tasks.tasks.insert({
       "resource": {
   	    title: 'Criando Task from script.google.com',
 	    notes: 'Via API - Remember to get this done!',
+	    parent: 'MTYyODU5ODMyODk1NTU3NjkwOTA6NDM0NzYzMDQ0OjA',
 	    due: dueDate.toISOString()
       }
+    
+    return gapi.client.tasks.tasks.insert({
+        "tasklist": "MTYyODU5ODMyODk1NTU3NjkwOTA6NDM0NzYzMDQ0OjA",
+        "parent": "RODRIGO HENRIQUE OLIVEIRA BISTERCO",
+        "resource": {
+          "title": "Agora vai ...",
+          "notes": "VIA API TEST",
+          "due": dueDate.toISOString()
+        }    
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
