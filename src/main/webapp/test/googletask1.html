@@ -20,8 +20,21 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
+	  var dueDate = new Date();
+	  dueDate.setDate(dueDate.getDate() + 5);
+	  //task.due = dueDate.toISOString();
+	  
+	  //var task = {
+	  //  title: 'Criando Task from script.google.com',
+	  //  notes: 'Via API - Remember to get this done!',
+	  //  due: dueDate.toISOString()
+	  //}
     return gapi.client.tasks.tasklists.insert({
-      "resource": {}
+      "resource": {
+  	    title: 'Criando Task from script.google.com',
+	    notes: 'Via API - Remember to get this done!',
+	    due: dueDate.toISOString()
+      }
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
