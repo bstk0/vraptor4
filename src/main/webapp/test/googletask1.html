@@ -1,7 +1,7 @@
 <script src="https://apis.google.com/js/api.js"></script>
 <script>
   /**
-   * Sample JavaScript code for tasks.tasklists.insert
+   * Sample JavaScript code for tasks.tasks.insert
    * See instructions for running APIs Explorer code samples locally:
    * https://developers.google.com/explorer-help/guides/code_samples#javascript
    */
@@ -13,30 +13,19 @@
               function(err) { console.error("Error signing in", err); });
   }
   function loadClient() {
-    gapi.client.setApiKey("AIzaSyBINocVQxUSm_9AODCRWh2nmpfO38FsbOI"); //YOUR_API_KEY
+    gapi.client.setApiKey("AIzaSyCbj8cHhiPPvQsMom6jEX9Byo-NhjYL774"); //YOUR_API_KEY
     return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/tasks/v1/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
-	  var dueDate = new Date();
-	  dueDate.setDate(dueDate.getDate() + 5);
-	  //task.due = dueDate.toISOString();
-	  
-	  //var task = {
-	  //  title: 'Criando Task from script.google.com',
-	  //  notes: 'Via API - Remember to get this done!',
-	  //  due: dueDate.toISOString()
-	  //}
-    //return gapi.client.tasks.tasklists.insert({
-    
     return gapi.client.tasks.tasks.insert({
-        "tasklist": "MTYyODU5ODMyODk1NTU3NjkwOTA6NDM0NzYzMDQ0OjA",
-        "resource": {
-          "title": "Agora vai ...",
-          "notes": "VIA API TEST"
-        }    
+      "tasklist": "MTYyODU5ODMyODk1NTU3NjkwOTA6NDM0NzYzMDQ0OjA",
+      "resource": {
+        "title": "Agora vai ...",
+        "notes": "VIA API TEST"
+      }
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
