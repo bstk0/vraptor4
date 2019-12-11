@@ -49,17 +49,21 @@
     gapi.auth2.init({client_id: "96485510018-l9uvb9hcneeit022l301uagpsbkvrg2v.apps.googleusercontent.com"}); //YOUR_CLIENT_ID
   });
   
-  var dueDate = new Date();
-  dueDate.setDate(dueDate.getDate() + 5);  
-  document.getElementById("datadue").value = dueDate.toISOString();
   
 </script>
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <br>
 Titulo: <input type="text" id="titulo" name="titulo">
 <br>
-Descr:  <input type="text" id="descricao" name="descricao">
+Descr:  <textarea id="descricao" name="descricao" rows="4" form="usrform"> 
+<!-- <input type="text" id="descricao" name="descricao">  -->
 <br>
 Data:   <input type="text" id="datadue" name="datadue">
 <br><br>
 <button onclick="execute()">execute</button>
+
+<script>
+	var dueDate = new Date();
+	dueDate.setDate(dueDate.getDate() + 5);  
+	document.getElementById("datadue").value = dueDate.toISOString();
+</script>
