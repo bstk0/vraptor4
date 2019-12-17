@@ -1,0 +1,186 @@
+<html ng-app="MyApp">
+ <head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title></title>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/1.0.11/firebase.js"></script>
+  <!-- AngularJS -->
+  <script
+    type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+
+  <!-- <script src="http://code.angularjs.org/1.2.6/angular.min.js"></script> -->
+  <!-- AngularFire Library -->
+  <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+
+<script type="text/javascript">
+
+  var myApp = angular.module("MyApp", ["firebase"]);
+
+//function MyController($scope, $firebase) {
+myApp.controller('MyController', function ($scope, $firebase) {
+  $scope.appAction = "I";
+  $scope.focusField1 = false;
+  var contaRef = new Firebase("https://dbengine.firebaseio.com/finan/contas");
+  $scope.conta = $firebase(contaRef);
+
+  // obtendo o total de records
+  $scope.conta.$on("loaded", function() {
+   var keys = $scope.conta.$getIndex();
+   console.log("count: " + keys.length);
+   $scope.contaSize = keys.length;
+  });
+
+  //console.log($scope.people.length);
+
+  // Set up the default filters.
+  $scope.filters = {
+      descr: ""
+  };
+
+
+  $scope.addConta_ = function() {
+
+// add a new child node
+$scope.conta.$push({hello: "world"}).then(function(newChildRef) {
+  console.log("added record with id " + newChildRef.key());
+});
+
+    // AngularFire $add method
+    //$scope.conta.$add($scope.conta);
+    
+    //$scope.conta.$add(contaid: $scope.conta.id, {$scope.conta});
+    //$scope.conta.$set($scope.conta.id {
+    //	 day: $scope.conta.day,
+    //	 descr: $scope.conta.descr,
+    //     value: $scope.conta.value,
+    //     debit: $scope.conta.debit });
+
+// inclui mas não funcionou
+//$scope.users.$child($scope.conta.id).set({
+//  day: $scope.conta.day,
+//	 descr: $scope.conta.descr,
+//	 value: $scope.conta.value,
+//  debit: $scope.conta.debit });
+
+    $scope.contaSize++;
+    $scope.conta = "";
+  }
+  
+$scope.addConta = function() {
+  var ref = new Firebase("https://dbengine.firebaseio.com/finan");
+  var usersRef = ref.child("contas");
+  var userObj = '{"'+ $scope.conta.id + '": {' + 
+        '"day": ' + $scope.conta.day + ' ,' +
+    	'"descr": "' + $scope.conta.descr + '" ,' +
+    	'"value": ' + $scope.conta.value + ' ,' +
+    	'"debit": ' + $scope.conta.debit + '  }}';
+    	
+  $scope.testJson = userObj;
+  
+  //var userJson = JSON.stringify(eval("(" + userObj + ")"));    	
+    	
+  //usersRef.set($firebaseUtils.toJSON(userObj));  
+  //usersRef.set(userObj.$asObject());
+  //usersRef.set(userObj.toJSON());
+  //usersRef.set( userObj );
+
+// funcionou !!
+//  usersRef.set({
+//    conta5: {
+//      day: 10,
+//      descr: "Conta teste",
+//      value: 110,
+//      debit: true
+//    }
+ // });
+ 
+ 
+ //funcionou mas tá dando rolo no id
+ //var userObj = $scope.conta;
+ //var userObjId = $scope.conta.id;
+ // usersRef.set({
+ //   userObjId : {
+ //     day: $scope.conta.day,
+ //     descr: $scope.conta.descr,
+ //     value: $scope.conta.value,
+ //     debit: $scope.conta.debit
+ //   }
+ //});
+ 
+ //FUNCIONOU !!! Se já existe ele dá update!! [20/02/2015]
+ usersRef.child($scope.conta.id).set({
+      day: $scope.conta.day,
+      descr: $scope.conta.descr,
+      value: $scope.conta.value,
+      debit: $scope.conta.debit     
+ });
+ 
+}  
+
+$scope.addConta__ = function() {
+  var ref = new Firebase("https://dbengine.firebaseio.com/web/saving-data/fireblog");
+  var usersRef = ref.child("users");
+  usersRef.set({
+    alanisawesome: {
+      date_of_birth: "June 23, 1912",
+      full_name: "Alan Turing"
+    },
+    gracehop: {
+      date_of_birth: "December 9, 1906",
+      full_name: "Grace Hopper"
+    }
+  });
+}
+
+});
+
+
+</script>
+
+ </head>
+ <form name="form1">
+ <body>
+  <a href="/"> Voltar </a><br>
+  <div ng-controller="MyController">
+   <input ng-model="conta.descr" type="search" placeholder="O que voce esta procurando?" /><br/>
+   <div ng-show="appAction == 'I'">
+     Id : <input ng-model="conta.id" name="id_" type="text" placeholder="Informe o Id da conta"  />
+     Dia Vencto   : <input ng-model="conta.day" name="day_" type="text" placeholder="Informe o dia de pagamento"  />
+     Descricao   : <input ng-model="conta.descr" name="descr_" type="text" placeholder="Informe a descricao"  />
+     Valor        : <input ng-model="conta.value" name="value_" type="text" placeholder="Informe a valor" />
+     Debito Auto  : <input type="checkbox" ng-model="conta.debit" name="debit_" placeholder="Informe se e debito automatico" />
+     <button ng-click="addConta()" type="submit" ng-show="appAction == 'I'">Add New Person</button>
+   </div>
+   Show ID: <input type="checkbox" ng-model="showIdChecked"><br/>
+   <br />
+   TOTAL: {{contaSize}}
+   <br>
+   JSON : {{testJson}}
+   <br />
+   <table>
+    <tr>
+      <th ng-show="showIdChecked">ID</th>
+      <th><a href="" ng-click="predicate = 'descr'; reverse=false">Name</a>
+          (<a href="" ng-click="predicate = '-descr'; reverse=false">^</a>)</th>
+      <th><a href="" ng-click="predicate = 'value'; reverse=!reverse">Age</a></th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+    <!-- O orderByPriority e do FireBase -->
+    <tr ng-repeat="item in conta | orderByPriority | orderBy:predicate:reverse | filter:conta.descr">
+      <td ng-show="showIdChecked">{{item.$id}}</td>
+      <td>{{item.descr}}</td>
+      <td>{{item.value}}</td>
+      <td><button ng-click="selectPerson(item.$id,'U')">EDIT</button></td>
+      <td><button ng-click="selectPerson(item.$id,'D')">DELETE</button></td>
+    </tr>
+  </table>
+
+  <br /><br />
+  </div>
+ <br>
+ <a href="/"> Voltar </a>
+ </body>
+</form>
+</html>
