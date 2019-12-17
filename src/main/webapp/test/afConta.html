@@ -16,12 +16,15 @@
 <script type="text/javascript">
 
   var myApp = angular.module("MyApp", ["firebase"]);
+  
+  const initialURI = "https://dbengine-64154.firebaseio.com";
 
 //function MyController($scope, $firebase) {
 myApp.controller('MyController', function ($scope, $firebase) {
   $scope.appAction = "I";
   $scope.focusField1 = false;
-  var contaRef = new Firebase("https://dbengine.firebaseio.com/finan/contas");
+  //var contaRef = new Firebase("https://dbengine.firebaseio.com/finan/contas");
+  var contaRef = new Firebase(initialURI + "/finan/contas");
   $scope.conta = $firebase(contaRef);
 
   // obtendo o total de records
@@ -68,7 +71,8 @@ $scope.conta.$push({hello: "world"}).then(function(newChildRef) {
   }
   
 $scope.addConta = function() {
-  var ref = new Firebase("https://dbengine.firebaseio.com/finan");
+  //var ref = new Firebase("https://dbengine.firebaseio.com/finan");
+  var ref = new Firebase(initialURI + "/finan");
   var usersRef = ref.child("contas");
   var userObj = '{"'+ $scope.conta.id + '": {' + 
         '"day": ' + $scope.conta.day + ' ,' +
@@ -119,7 +123,7 @@ $scope.addConta = function() {
 }  
 
 $scope.addConta__ = function() {
-  var ref = new Firebase("https://dbengine.firebaseio.com/web/saving-data/fireblog");
+  var ref = new Firebase(initialURI + "/web/saving-data/fireblog");
   var usersRef = ref.child("users");
   usersRef.set({
     alanisawesome: {
