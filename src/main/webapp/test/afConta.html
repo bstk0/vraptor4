@@ -24,7 +24,8 @@ myApp.controller('MyController', function ($scope, $firebase) {
   $scope.appAction = "I";
   $scope.focusField1 = false;
   //var contaRef = new Firebase("https://dbengine.firebaseio.com/finan/contas");
-  var contaRef = new Firebase(initialURI + "/finan/contas");
+  //var contaRef = new Firebase(initialURI + "/finan/contas");
+  var contaRef = new Firebase(initialURI + "/contas");
   $scope.conta = $firebase(contaRef);
 
   // obtendo o total de records
@@ -72,7 +73,8 @@ $scope.conta.$push({hello: "world"}).then(function(newChildRef) {
   
 $scope.addConta = function() {
   //var ref = new Firebase("https://dbengine.firebaseio.com/finan");
-  var ref = new Firebase(initialURI + "/finan");
+  //var ref = new Firebase(initialURI + "/finan");
+  var ref = new Firebase(initialURI + "/");
   var usersRef = ref.child("contas");
   var userObj = '{"'+ $scope.conta.id + '": {' + 
         '"day": ' + $scope.conta.day + ' ,' +
