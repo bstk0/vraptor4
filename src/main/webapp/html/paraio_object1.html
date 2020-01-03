@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>SHIPMENTS - FIREBASE</title>
+ <!--
+ <script type = "text/javascript" src = "http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+ <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script type = 'text/javascript'>
+ function cBack(data) { alert(JSON.stringify(data)); }
+ (function($) {
+ //var url = "https://bisterco.pythonanywhere.com/pstgr/carros";
+ var url = "https://paraio.com/v1/object1s";
+ var html='<table border=1>';
+ html += '<thead><td>ID</td><td>TITULO</td><td>RESUMO</td></thead>';
+
+		$.ajax({
+				type : 'GET',
+				url : url,
+				crossDomain : true,
+				headers: {
+				    "Authorization": "AWS4-HMAC-SHA256 Credential=app:dbapp/20200103/us-east-1/para/aws4_request, SignedHeaders=host;x-amz-date, Signature=cd6f89b6b44d71439c8b952b95769eca4a85b1cb8f9ba98e40d58346fc7035fc"
+				  },
+				timeout: 0,  
+				//async: false,
+				//jsonpCallback: 'cBack',
+				contentType : "application/json",
+				dataType : 'json',
+				success : function(data) {
+					//console.log(data);
+					//console.dir(data.value); //sites);
+					//for(var key in data.emps) {
+					for ( var key in data.items) {
+						//var value = data[key];
+						var value = data.documents[key].fields;
+						//console.log(value);
+						html += '<tr>';
+						html += '<td>' + value.titulo.stringValue + '</td>';
+						html += '<td>' + value.resumo.stringValue + '</td>';
+						html += '</tr>';
+					}
+					html += '</table>';
+					$(".retorno").append(html);
+
+				},
+				error : function(e) {
+					console.log(e.message);
+				}
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+   <h1>PARAIO.COM - object1s - 1GB free</h1>
+   <h2><a href="../">Voltar</a></h2><br>
+   <div class="retorno"></div>
+   <br>
+   <button value="Refresh Page" onClick="window.location.href=window.location.href">REFRESH</button>
+</body>
+</html>
