@@ -19,7 +19,7 @@
 
         function showError(msg) {
             console.log(msg);
-            $('div.container').append('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">×</button>' + JSON.stringify(msg) + '</div>');
+            $('div.container').append('<div class="alert alert-dismissible alert-danger"><button type="button" class="close" data-dismiss="alert">ï¿½</button>' + JSON.stringify(msg) + '</div>');
         }
         function showToDo(data) {
             $('.list-group').empty();
@@ -54,6 +54,7 @@
 <body>
     <div class="col-sm-12">
         <h1>Todo sample app</h1>
+        <h2><a href="/test/tests.html">Voltar Menu Testes</a></h2>
         <form>
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="add new todo here" maxlength="280" id="tb-new-task" autofocus />
