@@ -7,6 +7,23 @@
 	 return parseFloat(str.replace(',', '.')); 
  }
 
+ //duas decimais e sem moeda
+ function parseNumero2(str) {
+	 //console.log("typeof(str):" + typeof(str));
+	 var _num;
+	 if (typeof(str) == "string") 
+		 _num = parseNumero(str)
+	 else
+		 _num = str
+	 return parseFloat(_num.toFixed(2)).toLocaleString('pt-BR');
+ }
+ 
+ 
+ function parseMoeda(totalPago) {
+	 return parseFloat(totalPago.toFixed(2)).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+ }
+ 
+
  function _getUrlVars() {
 	    var vars = {};
 	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
