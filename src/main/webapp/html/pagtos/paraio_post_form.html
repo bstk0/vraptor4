@@ -16,10 +16,10 @@
 
           e.preventDefault();
           
-          var tag = $("#tag").val();
-          var descricao = $("#descricao").val();
-          var dia = $("#dia").val();
-          var valor = $("#valor").val();
+          let tag = $("#tag").val();
+          let descricao = $("#descricao").val();
+          let dia = parseInt($("#dia").val());
+          let valor = $("#valor").val();
 
           var userDetails = {
             "type": "pagto",
