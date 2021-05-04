@@ -30,7 +30,10 @@ function getSaldo() {
 
 function showExtrato(data) {
 	 $(".extrato").html('');
-	 var html='* exibe ' + data.items.lenght + ' ultimas linhas somente <br><table border=1>';
+	 // nao -  data.items.lenght
+	 console.log("data.items.lenght: " +  data.items[].len());
+
+	 var html='* exibe ' + data.items[].len() + ' ultimas linhas somente <br><table border=1>';
 	 //html += '<thead><td>ID1</td><td>TYPE1</td><td>ID2</td><td>TYPE2</td></thead>';
 	 //html += '<thead><td>TAG</td><td>DIA</td><td>DESCRICAO</td><td>VALOR</td><td>REALIZADO</td></thead>';
  	 html += '<thead><td>TIPO</td><td>DATA</td><td>VALOR</td><td>SALDO ANTERIOR</td><td>SALDO ATUAL</td><td>COMENTARIO</td></thead>';
