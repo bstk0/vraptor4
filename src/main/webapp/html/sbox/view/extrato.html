@@ -25,7 +25,7 @@
 				<option value="D" selected="selected">DEBITO</option>
 				<option value="C">CREDITO</option>
    			  </select><br>
-   		DATA  <input name="data" id="data"> [mm/dd/yyyy]<br>
+   		DATA  <input name="data" id="data"> [<b>mm</b>/dd/yyyy]<br>
         VALOR <input name="valor" id="valor"> [informe somente decimal com ","]<br>
         COMENTARO <input name="comentario" id="comentario"><br>
    </div>
@@ -53,8 +53,6 @@
 	
 	 $('select[name="listDias"]').on('change', function() {
 			 console.log("select.listDias:" + $(this).val());
-			 //getPagamentos($(this).val());
-			 //getListaPagamentosEfetuados();
 			 getExtrato($(this).val());
 	 });
 
