@@ -4,7 +4,7 @@ function showSaldo(data) {
 }
 
 function getSaldo() {
-	console.log("getExtrato");
+	console.log(">> getSaldo ...");
 	var url = "https://paraio.com/v1/saldo/1143180213983645696";
 
 			$.ajax({
@@ -56,6 +56,7 @@ function showExtrato(data) {
 
 
 function getExtrato(dias) {
+	console.log(">> getExtrato...");
 //https://paraio.com/v1/movims?sort=properties.data:desc&limit=1
 	//var url = "https://paraio.com/v1/movims?sort=properties.data:desc&limit=10";
 	var url = "https://paraio.com/v1/movims?sort=timestamp&limit="+dias;
