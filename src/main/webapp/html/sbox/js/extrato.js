@@ -55,10 +55,10 @@ function showExtrato(data) {
 
 
 
-function getExtrato() {
+function getExtrato(dias) {
 //https://paraio.com/v1/movims?sort=properties.data:desc&limit=1
 	//var url = "https://paraio.com/v1/movims?sort=properties.data:desc&limit=10";
-	var url = "https://paraio.com/v1/movims?sort=timestamp&limit=10";
+	var url = "https://paraio.com/v1/movims?sort=timestamp&limit="+dias;
 	
 	$.ajax({
 			type : 'GET',
@@ -144,5 +144,5 @@ var SaldoJ = { "valor": novoSaldo, "data" : data};
 function onInit() {
 	console.log("onInit");
 	getSaldo();
-	getExtrato();
+	getExtrato(10);
 }

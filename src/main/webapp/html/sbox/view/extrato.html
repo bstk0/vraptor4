@@ -12,6 +12,11 @@
  <p><a href="/test/tests.html">Voltar Menu Testes</a></p>
  <div id="saldo" name="saldo"></div>
  <br>
+ <select id="listDias" name="listDias">
+	<option value="10" selected>10</option>
+   	<option value="20">20</option>
+   	<option value="50">50</option>
+</select>
  <div class="extrato"></div>
  <BR>
     <div class="complemento">
@@ -46,5 +51,12 @@
 	     //window.location.href=window.location.href;
 	 });
 	
+	 $('select[name="listDias"]').on('change', function() {
+			 console.log("select.listDias:" + $(this).val());
+			 //getPagamentos($(this).val());
+			 //getListaPagamentosEfetuados();
+			 getExtrato($(this).val());
+	 });
+
  </script>
  </html>
