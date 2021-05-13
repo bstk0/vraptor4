@@ -11,7 +11,10 @@ import com.mongodb.client.MongoDatabase;
 public class MongoDBmLab {
 	//"mongodb://user:pass@host:port/db"
 	// mongodb://<dbuser>:<dbpassword>@ds013221.mlab.com:13221/dbe
-	private final String URI = "mongodb://user1:usuario1@ds013221.mlab.com:13221/dbe";
+	// private final String URI = "mongodb://user1:usuario1@ds013221.mlab.com:13221/dbe";
+	//13.05.21
+	private final String URI = "mongodb+srv://bisteka1:Bstk1234@my-atlas-cluster-mdyjt.mongodb.net/dbe?retryWrites=true&w=majority";
+
 	
 	@SuppressWarnings("resource")
 	private MongoDatabase getDbConnection() {
