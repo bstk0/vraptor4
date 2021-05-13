@@ -22,7 +22,7 @@ public class MongoDBmLab {
         //return client.getDatabase(uri.getDatabase());
 
 		MongoClient mongoClient = MongoClients.create(
-			"mongodb+srv://bisteka1:Bstk1234@cluster0.l0lec.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+			"mongodb+srv://bisteka1:Bstk1234@cluster0.l0lec.mongodb.net/dbe?retryWrites=true&w=majority");
 		return mongoClient.getDatabase("dbe");	
 	}
 	
