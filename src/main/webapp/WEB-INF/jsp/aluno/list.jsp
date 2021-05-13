@@ -32,7 +32,7 @@
 </style>
 </head>
 <body>
-	<h1>Aluno - from mLab (MongoDB)</h1>
+	<h1>Aluno - from MongoDB Atlas</h1>
 	<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
 	<a href="${linkTo[IndexController].index}">Voltar</a>
 	<div class="bs-example">
