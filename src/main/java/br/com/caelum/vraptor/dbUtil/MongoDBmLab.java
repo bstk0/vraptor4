@@ -23,7 +23,7 @@ public class MongoDBmLab {
 
 		MongoClient mongoClient = MongoClients.create(
 			"mongodb+srv://bisteka1:Bstk1234@cluster0.l0lec.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-		return database = mongoClient.getDatabase("dbe");	
+		return mongoClient.getDatabase("dbe");	
 	}
 	
 	public MongoCursor<Document> getCollection(String colletionName) {
