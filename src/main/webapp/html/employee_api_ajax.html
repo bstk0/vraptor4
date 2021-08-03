@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>EMPLOYEE - PYTHONANYWHERE</title>
+ <!--
+ <script type = "text/javascript" src = "http://code.jquery.com/jquery-latest.min.js"></script>
+-->
+ <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script type = 'text/javascript'>
+ function cBack(data) { alert(JSON.stringify(data)); }
+ (function($) {
+ var url = "https://bisterco.pythonanywhere.com/empdb/employee";
+ // local - var url = "http://bisterco.pythonanywhere.com/pstgr/carros";
+ var html='<table border=1>';
+ html += '<thead><td>ID</td><td>NOME</td><td>TITLE</td></thead>';
+ $.ajax({
+ type: 'GET',
+ url: url,
+ crossDomain: true,
+ //async: false,
+ //jsonpCallback: 'cBack',
+ contentType: "application/json",
+ dataType: 'json',
+ success: function(data) {
+     console.log(data);
+     console.dir(data.value); //sites);
+     for(var key in data.emps) {
+	             //var value = data[key];
+	             var value = data.emps[key];
+	             html+='<tr>';
+	             html+='<td>' + value[0] + '</td>';
+	             html+='<td>' + value[1] + '</td>';
+	             html+='<td>' + value[2] + '</td>';
+	             html+='</tr>';
+     }
+	 html+='</table>';
+     $(".retorno").append(html);
+
+ },
+ error: function(e) { console.log(e.message); }
+ });
+ })(jQuery);
+ </script>
+</head>
+<body>
+   <h1>Employee - API - Pythonanywhere</h1>
+   <h2><a href="../test/tests.html">Voltar</a></h2><br>
+   <div class="retorno"></div>
+   <br>
+   <button value="Refresh Page" onClick="window.location.href=window.location.href">REFRESH</button>
+</body>
+</html>
