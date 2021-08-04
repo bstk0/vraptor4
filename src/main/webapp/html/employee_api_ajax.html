@@ -9,13 +9,14 @@
  <script type = 'text/javascript'>
  function cBack(data) { alert(JSON.stringify(data)); }
  (function($) {
- var url = "https://bisterco.pythonanywhere.com/empdb/employee";
+ //var url = "https://bisterco.pythonanywhere.com/empdb/employee";
  // local - var url = "http://bisterco.pythonanywhere.com/pstgr/carros";
  var html='<table border=1>';
  html += '<thead><td>ID</td><td>NOME</td><td>TITLE</td></thead>';
  $.ajax({
+	 xhrFields: {cors: false},
 	 type: 'GET',
-	 url: url,
+	 url: "https://bisterco.pythonanywhere.com/empdb/employee",
 	 //crossDomain: false,
 	 //async: false,
 	 //jsonpCallback: 'cBack',
