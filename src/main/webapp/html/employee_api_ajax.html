@@ -17,18 +17,18 @@
 	 //xhrFields: {cors: false},
 	 type: 'GET',
 	 url: "https://bisterco.pythonanywhere.com/empdb/employee",
-	 //crossDomain: false,
+	 crossDomain: true,
 	 //async: false,
 	 //jsonpCallback: 'cBack',
-	 //contentType: "application/json",
-	 dataType: 'jsonp',
+	 contentType: "application/json",
+	 dataType: 'json',
 	 success: function(data) {
-	     console.log(data);
-	     console.dir(data.value); //sites);
+	     //console.log(data);
+	     //console.dir(data.value); //sites);
 	     for(var key in data.emps) {
 		             //var value = data[key];
 		             var value = data.emps[key];
-		             console.log('value=>' + value)
+		             //console.log('value=>' + value)
 		             html+='<tr>';
 		             html+='<td>' + value.id + '</td>';
 		             html+='<td>' + value.name + '</td>';
