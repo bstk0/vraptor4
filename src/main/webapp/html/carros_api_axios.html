@@ -10,7 +10,7 @@
  <script type = 'text/javascript'>
  function cBack(data) { alert(JSON.stringify(data)); }
 
-var url = "http://bisterco.pythonanywhere.com/pstgr/carros";
+var url = "https://bisterco.pythonanywhere.com/pstgr/carros";
 var html='<table border=1>';
 
  axios({
@@ -46,7 +46,8 @@ var html='<table border=1>';
 </head>
 <body>
    <h1>Carros - API - Pythonanywhere</h1>
-   <h2><a href="../">Voltar</a></h2><br>
+   <h2><a href="../test/tests.html">Voltar</a></h2><br>
+   <h4>A lista pode dar problema de CORS no note da Infosys</h4>
    <!-- <div class="retorno"></div> -->
    <div id="results"></div>
    <br>
