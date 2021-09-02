@@ -9,7 +9,7 @@ function getSaldo() {
 
 			$.ajax({
 					type : 'GET',
-					dataType : 'jsonp',
+					dataType : 'json',
 					url : url,
 					crossDomain : true,
 					headers: { 
