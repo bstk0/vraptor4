@@ -9,14 +9,17 @@ function getSaldo() {
 
 			$.ajax({
 					type : 'GET',
+					dataType : 'jsonp',
 					url : url,
 					crossDomain : true,
-					headers: { "Authorization": "Anonymous app:dbapp" },
+					headers: { 
+						"Authorization": "Anonymous app:dbapp",
+						"Access-Control-Allow-Origin" : "*" 
+						},
 					timeout: 0,  
 					//async: false,
 					//jsonpCallback: 'cBack',
 					contentType : "application/json",
-					dataType : 'jsonp',
 					success : function(data) {
 						console.log("data:" + data.valor);
 						showSaldo(data);
