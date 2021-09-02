@@ -16,7 +16,7 @@ function getSaldo() {
 					//async: false,
 					//jsonpCallback: 'cBack',
 					contentType : "application/json",
-					dataType : 'json',
+					dataType : 'jsonp',
 					success : function(data) {
 						console.log("data:" + data.valor);
 						showSaldo(data);
