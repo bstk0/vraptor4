@@ -13,8 +13,7 @@ function getSaldo() {
 					url : url,
 					crossDomain : true,
 					headers: { 
-						"Authorization": "Anonymous app:dbapp",
-						"Access-Control-Allow-Origin" : "*" 
+						"Authorization": "Anonymous app:dbapp"
 						},
 					timeout: 0,  
 					//async: false,
